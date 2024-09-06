@@ -1,0 +1,31 @@
+openapi: 3.0.0
+
+info:
+    title: eDiscovery Case Creation Plugin
+    description: Skills for creating a plugin that will help create eDiscovery case in Purview via Graph API Call
+    version: "v1"
+servers:
+    - url: https://graph.microsoft.com/beta/compliance/ediscovery
+
+paths:
+    /cases:
+        post:
+            operationId: Create eDiscovery case in Purview
+            description: Create eDiscovery case based on user supplied name
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                displayName:
+                                    type: string
+                                    description: Display name supplied by the user
+                    required:
+                        - displayName
+                    responses:
+                        "200":
+                            description: OK
+                            content:
+                                application/json:
