@@ -5,12 +5,12 @@ info:
     description: Skills for creating a plugin that will help create eDiscovery case in Purview via Graph API Call
     version: "v1"
 servers:
-   # - url: https://graph.microsoft.com/beta/compliance/ediscovery
-     - url: http://172.13.112.25:5000
+   - url: https://graph.microsoft.com/beta/compliance/ediscovery
+   #  - url: http://172.13.112.25:5000
     
 
 paths:
-    /raw_header_body:
+    /cases:
         post:
             operationId: Create eDiscovery case in Purview
             description: Create eDiscovery case based on user supplied name
